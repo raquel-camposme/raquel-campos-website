@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles — Raquel Campos</title>
+  <meta name="description" content="Weekly long-form analysis connecting geopolitics, technology, and economics to warehouse automation and intralogistics.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Raquel <span>Campos</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="articles.html" class="active">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="label">Articles</p>
+    <h1>Weekly foresight, published every Monday</h1>
+    <p>Long-form analysis connecting cross-domain signals to real implications for intralogistics.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="articles-grid" id="articles-grid">
+      <div class="empty-state" id="no-articles" style="grid-column: 1/-1;">
+        <p style="font-size: 1.1rem; color: var(--text-muted);">The first article will be published next Monday.</p>
+        <p style="margin-top: 0.75rem;"><a href="https://linkedin.com/in/raquel-camposme" target="_blank" rel="noopener">Follow on LinkedIn</a> for the weekly signal in the meantime.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Raquel <span>Campos</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Raquel Campos</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+fetch('articles/index.json')
+  .then(r => r.json())
+  .then(data => {
+    const articles = data.articles || [];
+    if (articles.length === 0) return;
+
+    document.getElementById('no-articles').remove();
+    const grid = document.getElementById('articles-grid');
+
+    articles.forEach(a => {
+      const card = document.createElement('div');
+      card.className = 'article-card';
+      card.innerHTML = `
+        <p class="article-card-meta">${a.date} &nbsp;·&nbsp; ${a.topic || 'Foresight'}</p>
+        <h3><a href="articles/${a.slug}.html">${a.title}</a></h3>
+        <p>${a.excerpt}</p>
+        <div style="margin-bottom: 0.75rem;">
+          ${(a.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+        <a href="articles/${a.slug}.html" class="read-more">Read article →</a>
+      `;
+      grid.appendChild(card);
+    });
+  })
+  .catch(() => {});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Raquel Campos</title>
+  <meta name="description" content="Get in touch with Raquel Campos — industrial foresight and warehouse automation.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Raquel <span>Campos</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="label">Contact</p>
+    <h1>Let's talk</h1>
+    <p>Reach out for speaking, collaboration, or a conversation about the industry.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>What I'm open to</h3>
+        <p style="color: var(--text-muted);">I'm happy to connect with operations leaders, founders, investors, researchers, and anyone working on the future of warehouse automation and intralogistics.</p>
+        <p style="color: var(--text-muted);">If you want to push back on something I wrote, even better.</p>
+
+        <div class="contact-detail">
+          <strong>Email</strong>
+          <a href="mailto:contact@raquel-campos.com">contact@raquel-campos.com</a>
+        </div>
+        <div class="contact-detail" style="margin-top:1rem;">
+          <strong>LinkedIn</strong>
+          <a href="https://linkedin.com/in/raquel-camposme" target="_blank" rel="noopener">linkedin.com/in/raquel-camposme</a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Speaking, collaboration, feedback…">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send message</button>
+          <p id="form-success" style="display:none; color: green; margin-top: 1rem; font-family: 'Helvetica Neue', sans-serif; font-size: 0.9rem;">Message sent — I'll be in touch soon.</p>
+          <p id="form-error" style="display:none; color: red; margin-top: 1rem; font-family: 'Helvetica Neue', sans-serif; font-size: 0.9rem;">Something went wrong. Please email me directly at contact@raquel-campos.com</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Raquel <span>Campos</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Raquel Campos</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.reset();
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      document.getElementById('form-error').style.display = 'block';
+    }
+  } catch {
+    document.getElementById('form-error').style.display = 'block';
+  }
+
+  btn.textContent = 'Send message';
+  btn.disabled = false;
+});
+</script>
+
+</body>
+</html>

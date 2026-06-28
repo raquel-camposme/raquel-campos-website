@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raquel Campos — Industrial Foresight & Warehouse Automation</title>
+  <meta name="description" content="Raquel Campos connects signals from geopolitics, technology, and macro economics to sharp implications for warehouse automation and intralogistics.">
+  <meta property="og:title" content="Raquel Campos — Industrial Foresight">
+  <meta property="og:description" content="Cross-domain signals for warehouse automation and intralogistics professionals.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Raquel <span>Campos</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-label">Industrial Foresight &amp; Intralogistics</p>
+      <h1>Connecting the dots <em>others keep separate</em></h1>
+      <p class="hero-sub">I read across geopolitics, technology, and economics to surface what matters for warehouse automation and supply chain — before it hits the trade press.</p>
+      <div class="hero-cta">
+        <a href="articles.html" class="btn btn-primary">Read the articles</a>
+        <a href="https://linkedin.com/in/raquel-camposme" class="btn btn-outline" target="_blank" rel="noopener">Follow on LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-photo-placeholder" aria-hidden="true">RC</div>
+  </div>
+</section>
+
+<!-- ── Latest Articles ── -->
+<section class="section">
+  <div class="container">
+    <p class="section-label">Latest thinking</p>
+    <h2>From the archive</h2>
+    <p class="section-intro">Weekly long-form analysis connecting cross-domain signals to real implications for intralogistics professionals.</p>
+
+    <div class="articles-grid" id="latest-articles">
+      <!-- Articles loaded dynamically -->
+      <div class="empty-state" id="no-articles">
+        <p>Articles will appear here every Monday. Check back next week — or follow on LinkedIn for the weekly signal.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;" id="all-articles-btn" style="display:none">
+      <a href="articles.html" class="btn btn-dark">View all articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── About Strip ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="about-strip">
+      <div>
+        <p class="section-label">About the work</p>
+        <h2>Why foresight matters in warehouse automation</h2>
+        <p style="color: var(--text-muted); margin-top: 1rem;">Most industry commentary tells you what happened. Foresight tells you what it means — and where it's going.</p>
+        <p style="color: var(--text-muted);">I scan the edges of multiple industries — technology, geopolitics, macro economics, labour markets — and translate early signals into clear implications for the people designing, deploying, and operating the next generation of warehouse systems.</p>
+        <a href="about.html" class="btn btn-dark" style="margin-top:1.5rem; display:inline-block;">More about me</a>
+      </div>
+      <div>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🔗</div>
+            <div class="pillar-text">
+              <h4>Cross-domain connections</h4>
+              <p>Geopolitical shifts, chip supply constraints, labour economics — all of it lands in the warehouse eventually. I trace the chain.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">📡</div>
+            <div class="pillar-text">
+              <h4>Early signals</h4>
+              <p>Things that haven't hit mainstream trade press yet but will matter for decisions made in the next 6–18 months.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🎯</div>
+            <div class="pillar-text">
+              <h4>Actionable positions</h4>
+              <p>Not "it remains to be seen." I take a view and state it plainly, so you can agree, disagree, or think harder.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LinkedIn Banner ── -->
+<section class="linkedin-banner">
+  <h3>Weekly signals, 3 times per week on LinkedIn</h3>
+  <p>Short, sharp posts connecting what's happening in the world to what it means for intralogistics.</p>
+  <a href="https://linkedin.com/in/raquel-camposme" class="btn btn-primary" target="_blank" rel="noopener">Follow on LinkedIn</a>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Raquel <span>Campos</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Raquel Campos</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Load latest articles from index
+fetch('articles/index.json')
+  .then(r => r.json())
+  .then(data => {
+    const articles = data.articles || [];
+    const latest = articles.slice(0, 3);
+    if (latest.length === 0) return;
+
+    document.getElementById('no-articles').remove();
+    const grid = document.getElementById('latest-articles');
+
+    latest.forEach(a => {
+      const card = document.createElement('div');
+      card.className = 'article-card';
+      card.innerHTML = `
+        <p class="article-card-meta">${a.date} &nbsp;·&nbsp; ${a.topic || 'Foresight'}</p>
+        <h3><a href="articles/${a.slug}.html">${a.title}</a></h3>
+        <p>${a.excerpt}</p>
+        <a href="articles/${a.slug}.html" class="read-more">Read article →</a>
+      `;
+      grid.appendChild(card);
+    });
+
+    if (articles.length > 3) {
+      document.getElementById('all-articles-btn').style.display = 'block';
+    }
+  })
+  .catch(() => {});  // No articles yet — empty state already shown
+</script>
+
+</body>
+</html>
