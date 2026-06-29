@@ -27,10 +27,30 @@ def slugify(title: str) -> str:
 def generate_article_html(title: str, date: str, topic: str, tags: list,
                            body_html: str, excerpt: str,
                            linkedin_posts: str, reading_time: int,
-                           slug: str) -> str:
+                           slug: str, sources: list = None) -> str:
     tags_html = "".join(f'<span class="tag">{t}</span>' for t in tags)
     article_url = f"https://raquel-campos.com/articles/{slug}.html"
     title_encoded = title.replace('"', '&quot;')
+
+    sources_html = ""
+    if sources:
+        items = ""
+        for s in sources:
+            link_open = f'<a href="{s["url"]}" target="_blank" rel="noopener">' if s.get("url") else ""
+            link_close = "</a>" if s.get("url") else ""
+            items += f'''
+      <div class="article-source-item" id="src{s["num"]}">
+        <div class="article-source-num">{s["num"]}</div>
+        <div class="article-source-detail">
+          {link_open}{s["title"]}{link_close}
+          <span class="article-source-pub">{s["source"]} &middot; {s["date"]}</span>
+        </div>
+      </div>'''
+        sources_html = f'''
+<div class="article-sources">
+  <h3 class="article-sources-title">Sources</h3>
+  {items}
+</div>'''
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -76,6 +96,8 @@ def generate_article_html(title: str, date: str, topic: str, tags: list,
 <div class="article-body">
 {body_html}
 </div>
+
+{sources_html}
 
 <div class="article-footer">
 
@@ -146,9 +168,10 @@ def markdown_to_html(text: str) -> str:
         elif line == "":
             if in_para: html_lines.append("</p>"); in_para = False
         else:
-            # inline bold
+            # inline bold, italic, citations
             line = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", line)
             line = re.sub(r"\*(.+?)\*", r"<em>\1</em>", line)
+            line = re.sub(r"\[(\d+)\]", r'<sup><a href="#src\1" class="cite">[\1]</a></sup>', line)
             if not in_para:
                 html_lines.append("<p>")
                 in_para = True
@@ -195,7 +218,7 @@ def git_push(message: str) -> None:
 
 
 def publish(title: str, topic: str, tags: list, body_markdown: str,
-             excerpt: str, linkedin_posts: str) -> str:
+             excerpt: str, linkedin_posts: str, sources: list = None) -> str:
     """
     Main entry point. Call this from linkedin_weekly_posts.py.
     Returns the URL of the published article.
@@ -209,7 +232,7 @@ def publish(title: str, topic: str, tags: list, body_markdown: str,
     html = generate_article_html(
         title=title, date=date, topic=topic, tags=tags,
         body_html=body_html, excerpt=excerpt, linkedin_posts=linkedin_posts,
-        reading_time=reading_time, slug=slug
+        reading_time=reading_time, slug=slug, sources=sources or []
     )
 
     article_path = SITE_DIR / "articles" / f"{slug}.html"
