@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "your-warehouse-contract-has-a-data-clause-problem-you-probably-havent-read-it",
+      "title": "Your Warehouse Contract Has a Data Clause Problem. You Probably Haven't Read It.",
+      "date": "June 29, 2026",
+      "topic": "Industry Structure",
+      "tags": [
+        "warehouse automation",
+        "data ownership",
+        "intralogistics",
+        "software strategy",
+        "industry structure"
+      ],
+      "excerpt": "The Allbirds-to-Smartbird pivot isn't a retail story. It's an early signal that operational data generated inside warehouses and fulfillment systems is becoming a separable, monetizable asset \u2014 and most automation contracts written today say nothing coherent about who owns it.",
+      "reading_time": 6
+    },
+    {
       "slug": "the-automation-pitch-is-wrong-why-geopolitical-instability-is-a-better-roi-argum",
       "title": "The Automation Pitch Is Wrong: Why Geopolitical Instability Is a Better ROI Argument Than Efficiency",
       "date": "June 29, 2026",
