@@ -17,7 +17,7 @@
   --max-w-wide: 1100px;
 }
 
-html { font-size: 18px; scroll-behavior: smooth; }
+html { font-size: 18px; scroll-behavior: smooth; color-scheme: light only; }
 
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
