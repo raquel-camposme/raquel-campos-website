@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-reshored-factory-has-no-warehouse-why-the-automation-industry-is-selling-to-",
+      "title": "The Reshored Factory Has No Warehouse: Why the Automation Industry Is Selling to the Wrong Buyer",
+      "date": "June 29, 2026",
+      "topic": "Robotics & Automation",
+      "tags": [
+        "reshoring",
+        "manufacturing automation",
+        "intralogistics",
+        "warehouse design",
+        "supply chain strategy"
+      ],
+      "excerpt": "US manufacturing is growing at its fastest rate since 2021 while cutting jobs \u2014 and the automation industry is celebrating the wrong part of that signal. The buyer who needs them most doesn't know it yet.",
+      "reading_time": 6
+    },
+    {
       "slug": "your-warehouse-contract-has-a-data-clause-problem-you-probably-havent-read-it",
       "title": "Your Warehouse Contract Has a Data Clause Problem. You Probably Haven't Read It.",
       "date": "June 29, 2026",
