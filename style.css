@@ -2,15 +2,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:   #1a2744;
-  --navy-light: #243260;
-  --gold:   #c9a84c;
-  --gold-light: #e8c96a;
+  --navy:   #1c1917;
+  --navy-light: #292524;
+  --gold:   #b45309;
+  --gold-light: #d97706;
   --white:  #ffffff;
-  --off-white: #f8f7f4;
-  --text:   #2c2c2c;
-  --text-muted: #6b6b6b;
-  --border: #e4e2dc;
+  --off-white: #f5f4f0;
+  --text:   #1c1917;
+  --text-muted: #6b7280;
+  --border: #e5e3de;
   --max-w:  780px;
   --max-w-wide: 1100px;
 }
@@ -151,12 +151,14 @@ em { font-style: italic; }
 }
 
 .hero-photo {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   border: 4px solid var(--gold);
   object-fit: cover;
+  object-position: center top;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .hero-photo-placeholder {
