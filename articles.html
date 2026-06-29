@@ -37,12 +37,23 @@
 <section class="section">
   <div class="container">
 
+    <!-- Search -->
+    <div class="articles-search">
+      <input type="text" id="search-input" placeholder="Search articles…" oninput="filterArticles()">
+    </div>
+
+    <!-- Tag filters -->
+    <div class="tag-filters" id="tag-filters"></div>
+
+    <!-- Grid -->
     <div class="articles-grid" id="articles-grid">
       <div class="empty-state" id="no-articles" style="grid-column: 1/-1;">
         <p style="font-size: 1.1rem; color: var(--text-muted);">The first article will be published next Monday.</p>
         <p style="margin-top: 0.75rem;"><a href="https://www.linkedin.com/in/raquelscampos/" target="_blank" rel="noopener">Follow on LinkedIn</a> for the weekly signal in the meantime.</p>
       </div>
     </div>
+
+    <p id="no-results" style="display:none; text-align:center; color:var(--text-muted); padding: 2rem 0;">No articles match your search.</p>
 
   </div>
 </section>
@@ -63,31 +74,76 @@
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
+let allArticles = [];
+let activeTag = null;
+
 fetch('articles/index.json')
   .then(r => r.json())
   .then(data => {
-    const articles = data.articles || [];
-    if (articles.length === 0) return;
-
+    allArticles = data.articles || [];
+    if (allArticles.length === 0) return;
     document.getElementById('no-articles').remove();
-    const grid = document.getElementById('articles-grid');
-
-    articles.forEach(a => {
-      const card = document.createElement('div');
-      card.className = 'article-card';
-      card.innerHTML = `
-        <p class="article-card-meta">${a.date} &nbsp;·&nbsp; ${a.topic || 'Foresight'}</p>
-        <h3><a href="articles/${a.slug}.html">${a.title}</a></h3>
-        <p>${a.excerpt}</p>
-        <div style="margin-bottom: 0.75rem;">
-          ${(a.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
-        </div>
-        <a href="articles/${a.slug}.html" class="read-more">Read article →</a>
-      `;
-      grid.appendChild(card);
-    });
+    buildTagFilters();
+    renderArticles(allArticles);
   })
   .catch(() => {});
+
+function buildTagFilters() {
+  const tags = [...new Set(allArticles.flatMap(a => a.tags || []))].sort();
+  if (tags.length === 0) return;
+  const wrap = document.getElementById('tag-filters');
+  const allBtn = document.createElement('button');
+  allBtn.className = 'tag-filter active';
+  allBtn.textContent = 'All';
+  allBtn.onclick = () => { activeTag = null; setActiveFilter(allBtn); filterArticles(); };
+  wrap.appendChild(allBtn);
+  tags.forEach(tag => {
+    const btn = document.createElement('button');
+    btn.className = 'tag-filter';
+    btn.textContent = tag;
+    btn.onclick = () => { activeTag = tag; setActiveFilter(btn); filterArticles(); };
+    wrap.appendChild(btn);
+  });
+}
+
+function setActiveFilter(activeBtn) {
+  document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
+  activeBtn.classList.add('active');
+}
+
+function filterArticles() {
+  const query = document.getElementById('search-input').value.toLowerCase();
+  const filtered = allArticles.filter(a => {
+    const matchesTag = !activeTag || (a.tags || []).includes(activeTag);
+    const matchesSearch = !query ||
+      a.title.toLowerCase().includes(query) ||
+      (a.excerpt || '').toLowerCase().includes(query) ||
+      (a.tags || []).some(t => t.toLowerCase().includes(query));
+    return matchesTag && matchesSearch;
+  });
+  renderArticles(filtered);
+  document.getElementById('no-results').style.display = filtered.length === 0 ? 'block' : 'none';
+}
+
+function renderArticles(articles) {
+  const grid = document.getElementById('articles-grid');
+  grid.innerHTML = '';
+  articles.forEach(a => {
+    const rt = a.reading_time ? ` &nbsp;·&nbsp; ${a.reading_time} min read` : '';
+    const card = document.createElement('div');
+    card.className = 'article-card';
+    card.innerHTML = `
+      <p class="article-card-meta">${a.date}${rt} &nbsp;·&nbsp; ${a.topic || 'Foresight'}</p>
+      <h3><a href="articles/${a.slug}.html">${a.title}</a></h3>
+      <p>${a.excerpt}</p>
+      <div style="margin-bottom: 0.75rem;">
+        ${(a.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
+      </div>
+      <a href="articles/${a.slug}.html" class="read-more">Read article →</a>
+    `;
+    grid.appendChild(card);
+  });
+}
 </script>
 
 </body>

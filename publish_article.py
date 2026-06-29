@@ -26,10 +26,11 @@ def slugify(title: str) -> str:
 
 def generate_article_html(title: str, date: str, topic: str, tags: list,
                            body_html: str, excerpt: str,
-                           linkedin_posts: str) -> str:
+                           linkedin_posts: str, reading_time: int,
+                           slug: str) -> str:
     tags_html = "".join(f'<span class="tag">{t}</span>' for t in tags)
-    # Pull first LinkedIn teaser post
-    first_post = linkedin_posts.split("---")[1].strip() if "---" in linkedin_posts else ""
+    article_url = f"https://raquel-campos.com/articles/{slug}.html"
+    title_encoded = title.replace('"', '&quot;')
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -41,6 +42,7 @@ def generate_article_html(title: str, date: str, topic: str, tags: list,
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{excerpt}">
   <meta property="og:type" content="article">
+  <meta property="og:url" content="{article_url}">
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" href="../favicon.ico">
 </head>
@@ -58,9 +60,13 @@ def generate_article_html(title: str, date: str, topic: str, tags: list,
   </div>
 </nav>
 
+<div class="tagline-bar">
+  <span>Industrial Foresight &amp; Intralogistics &nbsp;·&nbsp; Published every Monday</span>
+</div>
+
 <div class="article-header">
   <div class="article-header-inner">
-    <p class="article-meta">{date} &nbsp;·&nbsp; {topic}</p>
+    <p class="article-meta">{date} &nbsp;·&nbsp; {topic} &nbsp;·&nbsp; {reading_time} min read</p>
     <h1>{title}</h1>
     <p class="deck">{excerpt}</p>
     <div style="margin-top:1.25rem;">{tags_html}</div>
@@ -72,10 +78,20 @@ def generate_article_html(title: str, date: str, topic: str, tags: list,
 </div>
 
 <div class="article-footer">
+
+  <div class="share-bar">
+    <span class="share-label">Share this article</span>
+    <div class="share-buttons">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={article_url}" target="_blank" rel="noopener" class="share-btn share-btn--linkedin">LinkedIn</a>
+      <a href="https://twitter.com/intent/tweet?url={article_url}&text={title_encoded}" target="_blank" rel="noopener" class="share-btn share-btn--x">X / Twitter</a>
+      <button onclick="copyLink('{article_url}', this)" class="share-btn share-btn--copy">Copy link</button>
+    </div>
+  </div>
+
   <div class="linkedin-teaser">
     <h4>This week on LinkedIn</h4>
     <p>Three shorter posts expanding on these signals — follow along for the weekly take.</p>
-    <a href="https://linkedin.com/in/raquel-camposme" class="btn btn-dark" target="_blank" rel="noopener">Follow on LinkedIn →</a>
+    <a href="https://www.linkedin.com/in/raquelscampos/" class="btn btn-dark" target="_blank" rel="noopener">Follow on LinkedIn →</a>
   </div>
   <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted);">
     ← <a href="../articles.html">Back to all articles</a>
@@ -94,6 +110,15 @@ def generate_article_html(title: str, date: str, topic: str, tags: list,
     <p class="footer-copy">&copy; {datetime.now().year} Raquel Campos</p>
   </div>
 </footer>
+
+<script>
+function copyLink(url, btn) {{
+  navigator.clipboard.writeText(url).then(() => {{
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy link', 2000);
+  }});
+}}
+</script>
 
 </body>
 </html>
@@ -136,12 +161,11 @@ def markdown_to_html(text: str) -> str:
 
 
 def update_index(slug: str, title: str, date: str, topic: str,
-                  tags: list, excerpt: str) -> None:
+                  tags: list, excerpt: str, reading_time: int) -> None:
     index_path = SITE_DIR / "articles" / "index.json"
     with open(index_path) as f:
         data = json.load(f)
 
-    # Remove existing entry with same slug (idempotent re-publish)
     data["articles"] = [a for a in data["articles"] if a["slug"] != slug]
 
     data["articles"].insert(0, {
@@ -151,6 +175,7 @@ def update_index(slug: str, title: str, date: str, topic: str,
         "topic": topic,
         "tags": tags,
         "excerpt": excerpt,
+        "reading_time": reading_time,
     })
 
     with open(index_path, "w") as f:
@@ -178,17 +203,20 @@ def publish(title: str, topic: str, tags: list, body_markdown: str,
     date = datetime.now().strftime("%B %d, %Y")
     slug = slugify(title)
     body_html = markdown_to_html(body_markdown)
+    word_count = len(body_markdown.split())
+    reading_time = max(1, round(word_count / 200))
 
     html = generate_article_html(
         title=title, date=date, topic=topic, tags=tags,
-        body_html=body_html, excerpt=excerpt, linkedin_posts=linkedin_posts
+        body_html=body_html, excerpt=excerpt, linkedin_posts=linkedin_posts,
+        reading_time=reading_time, slug=slug
     )
 
     article_path = SITE_DIR / "articles" / f"{slug}.html"
     with open(article_path, "w") as f:
         f.write(html)
 
-    update_index(slug, title, date, topic, tags, excerpt)
+    update_index(slug, title, date, topic, tags, excerpt, reading_time)
 
     git_push(f"publish: {title}")
 
