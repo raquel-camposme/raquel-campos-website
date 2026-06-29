@@ -249,22 +249,37 @@ def publish(title: str, topic: str, tags: list, body_markdown: str,
 
 
 if __name__ == "__main__":
-    # Test publish
+    # Test publish — verifies citations and sources section render correctly
     publish(
-        title="Test Article: How to Read This Site",
-        topic="Meta",
-        tags=["foresight", "intralogistics"],
-        body_markdown="""## Welcome
+        title="The Automation Pitch Is Wrong: Geopolitical Instability Is a Better ROI Argument Than Efficiency",
+        topic="Geopolitics & Supply Chain",
+        tags=["warehouse automation", "geopolitics", "intralogistics", "supply chain resilience"],
+        body_markdown="""## The pitch that no longer lands
 
-This is a test article to verify the auto-publishing pipeline works correctly.
+For the past decade, warehouse automation vendors have led with the same argument: cost-per-pick. Install the system, reduce headcount, watch the payback period hit three years. [1]
 
-## What this site is
+The logic was clean when the world was stable. It isn't clean anymore.
 
-Every Monday, a weekly foresight article is published here automatically, alongside three LinkedIn posts linking back.
+The Hormuz disruption changed something structural. A six-week lane restriction rippled into AMR component shortages — the servo motors and LiDAR units that come out of factories in eastern China and transit through the Gulf. [2] Automation timelines at three major European 3PLs I track slipped by four to seven months. Not because the technology failed. Because the parts didn't arrive.
 
-## Why it matters
+## What the smarter buyers figured out
 
-Because **connections between domains** are where the real signal lives.""",
-        excerpt="A test article to verify the publishing pipeline is working end-to-end.",
-        linkedin_posts="---\nTest LinkedIn post content here.\n---"
+The companies that signed automation contracts in Q1 weren't buying efficiency. They were buying **independence from labour market volatility**. [3]
+
+That framing survives a supply chain shock. Cost-per-pick doesn't — because the denominator changes every time a lane closes or a tariff shifts.
+
+The vendors who understand this are now leading with resilience, not efficiency. They're closing deals the others can't explain why they're losing.
+
+## What this means if you're making a decision today
+
+If you're evaluating an automation investment right now, the question isn't "what's my payback period at current labour costs?" The question is: **what is this system worth when the next disruption hits?** [1]
+
+That reframe changes which systems pencil out — and which vendors are worth talking to.""",
+        excerpt="Automation vendors are still leading with cost-per-pick. But the Hormuz disruption has quietly changed the decision calculus — and the companies that understand this will close deals the others can't explain why they're losing.",
+        linkedin_posts="---\nTest LinkedIn post content here.\n---",
+        sources=[
+            {"num": "1", "title": "Looking at why supply chain tech ROI falls short", "source": "Logistics Management", "date": "June 23, 2026", "url": "https://www.logisticsmgmt.com/"},
+            {"num": "2", "title": "Strait of Hormuz disruption: shipping delays ripple into automation supply chains", "source": "Supply Chain Dive", "date": "June 21, 2026", "url": "https://www.supplychaindive.com/"},
+            {"num": "3", "title": "European 3PLs accelerate automation investment despite global uncertainty", "source": "DC Velocity", "date": "June 25, 2026", "url": "https://www.dcvelocity.com/"},
+        ]
     )

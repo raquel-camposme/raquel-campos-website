@@ -1,33 +1,18 @@
 {
   "articles": [
     {
-      "slug": "your-warehouse-contract-has-a-data-clause-problem-you-probably-havent-read-it",
-      "title": "Your Warehouse Contract Has a Data Clause Problem. You Probably Haven't Read It.",
-      "date": "June 29, 2026",
-      "topic": "Industry Structure",
-      "tags": [
-        "warehouse automation",
-        "data ownership",
-        "intralogistics",
-        "software strategy",
-        "industry structure"
-      ],
-      "excerpt": "The Allbirds-to-Smartbird pivot isn't a retail story. It's an early signal that operational data generated inside warehouses and fulfillment systems is becoming a separable, monetizable asset \u2014 and most automation contracts written today say nothing coherent about who owns it.",
-      "reading_time": 6
-    },
-    {
-      "slug": "the-automation-pitch-is-wrong-why-geopolitical-instability-is-a-better-roi-argum",
-      "title": "The Automation Pitch Is Wrong: Why Geopolitical Instability Is a Better ROI Argument Than Efficiency",
+      "slug": "the-automation-pitch-is-wrong-geopolitical-instability-is-a-better-roi-argument-",
+      "title": "The Automation Pitch Is Wrong: Geopolitical Instability Is a Better ROI Argument Than Efficiency",
       "date": "June 29, 2026",
       "topic": "Geopolitics & Supply Chain",
       "tags": [
         "warehouse automation",
-        "hormuz strait",
-        "inventory strategy",
+        "geopolitics",
         "intralogistics",
         "supply chain resilience"
       ],
-      "excerpt": "Automation vendors are still leading with cost-per-pick. But the Hormuz disruption has quietly changed the decision calculus \u2014 and the companies that understand this will close deals the others can't explain why they're losing."
+      "excerpt": "Automation vendors are still leading with cost-per-pick. But the Hormuz disruption has quietly changed the decision calculus \u2014 and the companies that understand this will close deals the others can't explain why they're losing.",
+      "reading_time": 1
     }
   ]
 }
