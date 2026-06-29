@@ -185,7 +185,7 @@ em { font-style: italic; }
   border-radius: 50%;
   border: 3px solid var(--green);
   object-fit: cover;
-  object-position: center 15%;
+  object-position: 60% 15%;
   flex-shrink: 0;
   align-self: center;
 }
