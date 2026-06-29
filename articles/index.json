@@ -1,3 +1,18 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "slug": "the-automation-pitch-is-wrong-why-geopolitical-instability-is-a-better-roi-argum",
+      "title": "The Automation Pitch Is Wrong: Why Geopolitical Instability Is a Better ROI Argument Than Efficiency",
+      "date": "June 29, 2026",
+      "topic": "Geopolitics & Supply Chain",
+      "tags": [
+        "warehouse automation",
+        "hormuz strait",
+        "inventory strategy",
+        "intralogistics",
+        "supply chain resilience"
+      ],
+      "excerpt": "Automation vendors are still leading with cost-per-pick. But the Hormuz disruption has quietly changed the decision calculus \u2014 and the companies that understand this will close deals the others can't explain why they're losing."
+    }
+  ]
 }
