@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "humanoid-robots-are-reaching-the-factory-floor-the-bottleneck-was-never-the-hard",
+      "title": "Humanoid Robots Are Reaching the Factory Floor. The Bottleneck Was Never the Hardware.",
+      "date": "July 01, 2026",
+      "topic": "Technology & Business Impact",
+      "tags": [
+        "humanoid robots",
+        "automation",
+        "manufacturing",
+        "intralogistics",
+        "labour"
+      ],
+      "excerpt": "BMW just deployed Figure 03 at scale. Agility Robotics is going public. AGIBOT hit 15,000 units. The hardware is arriving faster than expected \u2014 but I think the industry is about to discover that deploying a robot and integrating a robot are two very different problems.",
+      "reading_time": 7
+    },
+    {
       "slug": "the-logistics-stack-is-being-rebuilt-from-the-top-down-and-cma-cgm-is-writing-th",
       "title": "The Logistics Stack Is Being Rebuilt From the Top Down, and CMA CGM Is Writing the Blueprint",
       "date": "July 01, 2026",
