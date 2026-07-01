@@ -81,7 +81,7 @@ def generate_article_html(title: str, date: str, topic: str, tags: list,
 </nav>
 
 <div class="tagline-bar">
-  <span>Industrial Foresight &amp; Intralogistics &nbsp;·&nbsp; Published every Monday</span>
+  <span>Industrial Research &nbsp;·&nbsp; Connecting global signals to supply chain &nbsp;·&nbsp; Published every Monday</span>
 </div>
 
 <div class="article-header">
