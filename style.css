@@ -640,7 +640,7 @@ sup a.cite:hover { text-decoration: underline; }
   width: 100%;
   max-height: 340px;
   object-fit: cover;
-  object-position: 48% 20%;
+  object-position: center 20%;
   border-radius: 4px;
   display: block;
 }
