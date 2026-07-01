@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "truck-rates-are-up-31-and-nobody-seems-to-know-what-to-do-about-it",
+      "title": "Truck Rates Are Up 31% and Nobody Seems to Know What to Do About It",
+      "date": "July 01, 2026",
+      "topic": "Labour & Operations",
+      "tags": [
+        "freight",
+        "trucking",
+        "capacity",
+        "onshoring",
+        "cost volatility"
+      ],
+      "excerpt": "Spot truck rates jumped 31% year-over-year in May. That number deserves more attention than it's getting \u2014 because the pressures driving it aren't going away, and they're about to collide with a wave of reshoring that assumes cheap domestic freight.",
+      "reading_time": 6
+    },
+    {
       "slug": "pax-silica-and-the-quiet-rewiring-of-industrial-supply-chains",
       "title": "Pax Silica and the Quiet Rewiring of Industrial Supply Chains",
       "date": "July 01, 2026",
