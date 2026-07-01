@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-logistics-stack-is-being-rebuilt-from-the-top-down-and-cma-cgm-is-writing-th",
+      "title": "The Logistics Stack Is Being Rebuilt From the Top Down, and CMA CGM Is Writing the Blueprint",
+      "date": "July 01, 2026",
+      "topic": "Industry Structure",
+      "tags": [
+        "logistics consolidation",
+        "ocean shipping",
+        "3pl",
+        "supply chain integration",
+        "cma cgm"
+      ],
+      "excerpt": "CMA CGM just bought FedEx's contract logistics unit for $1.4 billion. That's not a port operator diversifying. That's a company assembling a vertically integrated logistics stack \u2014 and it's further along than most people realize.",
+      "reading_time": 7
+    },
+    {
       "slug": "the-reshored-factory-has-no-warehouse-why-the-automation-industry-is-selling-to-",
       "title": "The Reshored Factory Has No Warehouse: Why the Automation Industry Is Selling to the Wrong Buyer",
       "date": "June 29, 2026",
