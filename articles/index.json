@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "cma-cgm-is-eating-the-supply-chain-one-acquisition-at-a-time",
+      "title": "CMA CGM Is Eating the Supply Chain, One Acquisition at a Time",
+      "date": "July 01, 2026",
+      "topic": "Industry Structure",
+      "tags": [
+        "logistics consolidation",
+        "3pl",
+        "ocean freight",
+        "contract logistics",
+        "industry structure"
+      ],
+      "excerpt": "CMA CGM just agreed to buy FedEx Supply Chain for $1.4 billion, folding it into CEVA Logistics and tripling its North American contract logistics footprint overnight. This isn't a shipping company diversifying. It's something more structurally interesting than that.",
+      "reading_time": 7
+    },
+    {
       "slug": "truck-rates-are-up-31-and-nobody-seems-to-know-what-to-do-about-it",
       "title": "Truck Rates Are Up 31% and Nobody Seems to Know What to Do About It",
       "date": "July 01, 2026",
