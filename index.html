@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raquel Campos — Industrial Foresight & Warehouse Automation</title>
-  <meta name="description" content="Raquel Campos connects signals from geopolitics, technology, and macro economics to sharp implications for warehouse automation and intralogistics.">
-  <meta property="og:title" content="Raquel Campos — Industrial Foresight">
-  <meta property="og:description" content="Cross-domain signals for warehouse automation and intralogistics professionals.">
+  <title>Raquel Campos — Industrial Researcher</title>
+  <meta name="description" content="Raquel Campos reads global signals — geopolitics, technology, consumer behavior — and traces where they land in supply chain.">
+  <meta property="og:title" content="Raquel Campos — Industrial Researcher">
+  <meta property="og:description" content="Global signals traced to supply chain implications. Published every Monday.">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico">
@@ -28,16 +28,16 @@
 
 <!-- ── Tagline bar ── -->
 <div class="tagline-bar">
-  <span>Industrial Foresight &amp; Intralogistics &nbsp;·&nbsp; Published every Monday</span>
+  <span>Industrial Research &nbsp;·&nbsp; Connecting global signals to supply chain &nbsp;·&nbsp; Published every Monday</span>
 </div>
 
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <p class="hero-label">Industrial Foresight &amp; Intralogistics</p>
-      <h1>Connecting the dots <em>others keep separate</em></h1>
-      <p class="hero-sub">I read across geopolitics, technology, and economics to surface what matters for warehouse automation and supply chain — before it hits the trade press.</p>
+      <p class="hero-label">Industrial Research</p>
+      <h1>Following global signals <em>to where they land in supply chain</em></h1>
+      <p class="hero-sub">I read across geopolitics, technology, trade policy, and consumer behavior to trace what it means for manufacturing, logistics, and retail. Published every Monday.</p>
       <div class="hero-cta">
         <a href="articles.html" class="btn btn-primary">Read the articles</a>
         <a href="https://www.linkedin.com/in/raquelscampos/" class="btn-text-link" target="_blank" rel="noopener">Follow on LinkedIn →</a>
@@ -52,7 +52,7 @@
   <div class="container">
     <p class="section-label">Latest thinking</p>
     <h2>From the archive</h2>
-    <p class="section-intro">Weekly long-form analysis connecting cross-domain signals to real implications for intralogistics professionals.</p>
+    <p class="section-intro">Weekly long-form analysis tracing global signals to supply chain implications across manufacturing, logistics, and retail.</p>
 
     <div class="articles-grid" id="latest-articles">
       <!-- Articles loaded dynamically -->
@@ -146,7 +146,7 @@ fetch('articles/index.json')
       const card = document.createElement('div');
       card.className = 'article-card';
       card.innerHTML = `
-        <p class="article-card-meta">${a.date} &nbsp;·&nbsp; ${a.topic || 'Foresight'}</p>
+        <p class="article-card-meta">${a.topic || 'Foresight'}</p>
         <h3><a href="articles/${a.slug}.html">${a.title}</a></h3>
         <p>${a.excerpt}</p>
         <a href="articles/${a.slug}.html" class="read-more">Read article →</a>

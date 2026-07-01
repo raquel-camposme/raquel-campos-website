@@ -23,7 +23,7 @@
 </nav>
 
 <div class="tagline-bar">
-  <span>Industrial Foresight &amp; Intralogistics &nbsp;&middot;&nbsp; Published every Monday</span>
+  <span>Industrial Research &nbsp;&middot;&nbsp; Connecting global signals to supply chain &nbsp;&middot;&nbsp; Published every Monday</span>
 </div>
 
 <div class="page-header">
@@ -133,7 +133,7 @@ function renderArticles(articles) {
     const card = document.createElement('div');
     card.className = 'article-card';
     card.innerHTML = `
-      <p class="article-card-meta">${a.date}${rt} &nbsp;·&nbsp; ${a.topic || 'Foresight'}</p>
+      <p class="article-card-meta">${a.topic || 'Foresight'}${rt}</p>
       <h3><a href="articles/${a.slug}.html">${a.title}</a></h3>
       <p>${a.excerpt}</p>
       <div style="margin-bottom: 0.75rem;">
