@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "pax-silica-and-the-quiet-rewiring-of-industrial-supply-chains",
+      "title": "Pax Silica and the Quiet Rewiring of Industrial Supply Chains",
+      "date": "July 01, 2026",
+      "topic": "Trade & Geopolitics",
+      "tags": [
+        "geopolitics",
+        "semiconductors",
+        "rare earths",
+        "supply chain resilience",
+        "industrial policy"
+      ],
+      "excerpt": "The EU just signed onto the US-led Pax Silica initiative, committing to shared rare earth and semiconductor supply chains across trusted allies. Most coverage treated it as a tech policy story. It isn't.",
+      "reading_time": 7
+    },
+    {
       "slug": "the-onshoring-premium-what-lovesacs-sactionals-move-tells-us-about-the-real-cost",
       "title": "The Onshoring Premium: What Lovesac's Sactionals Move Tells Us About the Real Cost of Tariff Strategy",
       "date": "July 01, 2026",
