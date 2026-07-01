@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-onshoring-premium-what-lovesacs-sactionals-move-tells-us-about-the-real-cost",
+      "title": "The Onshoring Premium: What Lovesac's Sactionals Move Tells Us About the Real Cost of Tariff Strategy",
+      "date": "July 01, 2026",
+      "topic": "Manufacturing & Production",
+      "tags": [
+        "onshoring",
+        "tariffs",
+        "consumer goods",
+        "manufacturing",
+        "supply chain resilience"
+      ],
+      "excerpt": "Lovesac is moving production of its core sofa line to the US this summer. The product will be different from the version made in Vietnam. That detail is more important than the announcement itself.",
+      "reading_time": 7
+    },
+    {
       "slug": "humanoid-robots-are-reaching-the-factory-floor-the-bottleneck-was-never-the-hard",
       "title": "Humanoid Robots Are Reaching the Factory Floor. The Bottleneck Was Never the Hardware.",
       "date": "July 01, 2026",
