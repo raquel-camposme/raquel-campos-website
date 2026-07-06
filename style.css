@@ -408,6 +408,68 @@ em { font-style: italic; }
 
 .contact-info h3 { margin-bottom: 1rem; }
 .contact-info p { color: var(--text-muted); }
+/* ── LinkedIn Card ── */
+.li-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-top: 4px solid var(--green);
+  border-radius: 6px;
+  padding: 2rem 2rem 2rem;
+}
+.li-card-logo {
+  width: 28px;
+  height: 28px;
+  fill: #0a66c2;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.li-card-body {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.li-card-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 65% 15%;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+.li-card-info {
+  flex: 1;
+}
+.li-card-name {
+  font-family: 'Georgia', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+.li-card-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.li-card-tagline {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+.li-card-btn {
+  font-size: 0.8rem;
+  padding: 0.5rem 1.25rem;
+}
+
 .contact-detail {
   margin-top: 1.5rem;
   font-family: 'Helvetica Neue', Arial, sans-serif;
