@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-suez-return-is-not-a-recovery-its-a-reset",
+      "title": "The Suez Return Is Not a Recovery \u2014 It's a Reset",
+      "date": "July 06, 2026",
+      "topic": "Trade & Geopolitics",
+      "tags": [
+        "ocean freight",
+        "red sea",
+        "suez canal",
+        "shipping rates",
+        "supply chain resilience"
+      ],
+      "excerpt": "Maersk and Hapag-Lloyd just announced the first Gemini service will return to the Suez Canal route. Most people will read this as good news. I think it's more complicated than that.",
+      "reading_time": 7
+    },
+    {
       "slug": "truck-rates-are-up-31-and-nobody-seems-to-know-what-to-do-about-it",
       "title": "Truck Rates Are Up 31% and Nobody Seems to Know What to Do About It",
       "date": "July 01, 2026",
