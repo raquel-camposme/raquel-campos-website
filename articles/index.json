@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-automation-stack-is-consolidating-and-the-winners-wont-be-who-you-think",
+      "title": "The Automation Stack Is Consolidating, and the Winners Won't Be Who You Think",
+      "date": "July 08, 2026",
+      "topic": "Industry Structure",
+      "tags": [
+        "warehouse automation",
+        "robotics",
+        "m&a",
+        "intralogistics",
+        "software"
+      ],
+      "excerpt": "Symbotic just bought a UK orchestration software company. Luxonis raised a Series A for AI vision. Humanoid robots are claiming near-human dexterity. Taken separately, these are just industry news. Taken together, they're a map of where the automation stack is heading \u2014 and the consolidation logic is clearer than it looks.",
+      "reading_time": 7
+    },
+    {
       "slug": "the-suez-return-is-not-a-recovery-its-a-reset",
       "title": "The Suez Return Is Not a Recovery \u2014 It's a Reset",
       "date": "July 06, 2026",
