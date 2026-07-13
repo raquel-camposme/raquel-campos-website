@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-memory-war-has-two-fronts-and-supply-chain-is-caught-in-the-middle",
+      "title": "The Memory War Has Two Fronts, and Supply Chain Is Caught in the Middle",
+      "date": "July 13, 2026",
+      "topic": "Industry Structure",
+      "tags": [
+        "semiconductors",
+        "memory chips",
+        "capital markets",
+        "supply chain risk",
+        "china tech"
+      ],
+      "excerpt": "SK Hynix just pulled off the largest foreign IPO in US history. A week later, China's CXMT opened subscriptions for its own $4.4 billion Shanghai listing. Two memory giants, two capital markets, one AI-driven demand surge \u2014 and a supply chain that has to figure out which world it's building for.",
+      "reading_time": 7
+    },
+    {
       "slug": "the-hormuz-hangover-has-only-just-begun",
       "title": "The Hormuz Hangover Has Only Just Begun",
       "date": "July 13, 2026",
