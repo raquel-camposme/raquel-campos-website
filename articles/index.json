@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-reshoring-bill-is-coming-due-and-the-freight-market-isnt-ready",
+      "title": "The Reshoring Bill Is Coming Due \u2014 and the Freight Market Isn't Ready",
+      "date": "July 13, 2026",
+      "topic": "Manufacturing & Production",
+      "tags": [
+        "reshoring",
+        "freight capacity",
+        "semiconductors",
+        "automotive",
+        "tariffs"
+      ],
+      "excerpt": "Micron is spending $250 billion to build chips in America. Toyota is moving Tacoma production to Texas. Apple and Broadcom are pledging billions more. Reshoring is no longer a policy aspiration \u2014 it's a construction project. But the freight market underpinning all of it is already running out of room.",
+      "reading_time": 7
+    },
+    {
       "slug": "the-automation-stack-is-consolidating-and-the-winners-wont-be-who-you-think",
       "title": "The Automation Stack Is Consolidating, and the Winners Won't Be Who You Think",
       "date": "July 08, 2026",
