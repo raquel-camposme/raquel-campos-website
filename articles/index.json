@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-warehouse-land-grab-that-will-outlast-every-tariff-cycle",
+      "title": "The Warehouse Land Grab That Will Outlast Every Tariff Cycle",
+      "date": "July 23, 2026",
+      "topic": "Industry Structure",
+      "tags": [
+        "real estate",
+        "logistics infrastructure",
+        "prologis",
+        "nearshoring",
+        "warehouse automation"
+      ],
+      "excerpt": "Prologis just agreed to buy Segro for $18.7 billion. Most coverage treats it as a real estate deal. I think it's better understood as a bet on which geography wins the next decade of supply chain restructuring.",
+      "reading_time": 7
+    },
+    {
       "slug": "the-north-american-rail-map-just-changed-nobodys-talking-about-what-that-means-f",
       "title": "The North American Rail Map Just Changed. Nobody's Talking About What That Means for Supply Chains.",
       "date": "July 23, 2026",
