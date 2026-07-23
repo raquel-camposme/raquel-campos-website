@@ -1,6 +1,21 @@
 {
   "articles": [
     {
+      "slug": "the-north-american-rail-map-just-changed-nobodys-talking-about-what-that-means-f",
+      "title": "The North American Rail Map Just Changed. Nobody's Talking About What That Means for Supply Chains.",
+      "date": "July 23, 2026",
+      "topic": "Trade & Geopolitics",
+      "tags": [
+        "rail",
+        "north america",
+        "tariffs",
+        "logistics",
+        "nearshoring"
+      ],
+      "excerpt": "A rail settlement between CN and Union Pacific quietly reshapes freight connectivity across North America, just as 50% tariffs on Canada and USMCA renegotiations rewrite the rules for cross-border trade. These two things are not unrelated.",
+      "reading_time": 7
+    },
+    {
       "slug": "chinas-demand-collapse-is-pushing-its-car-industry-outward-the-world-should-be-p",
       "title": "China's Demand Collapse Is Pushing Its Car Industry Outward. The World Should Be Paying Attention.",
       "date": "July 23, 2026",
